@@ -14,7 +14,7 @@ class TodosListCtrl {
   }
 }
 
-export default angular.module('todosList', [
+export default angular.module('getaway', [
   angularMeteor
 ])
   .component('todosList', {

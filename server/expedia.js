@@ -1,6 +1,6 @@
 var request = require('request');
 
-function get_activities(city, state, start_date, end_date, callback) {
+exports.get_activities = function get_activities(city, state, start_date, end_date, callback) {
     var expedia_url = "https://www.expedia.com/lx/api/search";
 
     var expedia_params = {

@@ -1,0 +1,14 @@
+<form ng-submit="$ctrl.submit()">
+  <input type="text" name="firstname">
+  <input type="submit" value="Submit">
+</form>
+<div>
+  {{ the_test }}
+  <br/>
+  <br/>
+  <ul>
+    <li ng-repeat="task in $ctrl.tasks">
+      {{task.text}}
+    </li>
+  </ul>
+</div>

@@ -44,6 +44,7 @@ function get_homes(city, state, start_date, end_date,
 	    // distanceInKm: 0,
 	    q: city + ', ' + state,
 	    pageSize: 30,
+	    imageSize: 'LARGE'
 	};
 
 	if (lat && lon && dist) {

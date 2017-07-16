@@ -1,6 +1,6 @@
 var request = require('request');
 
-exports.get_activities = function get_activities(city, state, start_date, end_date, callback) {
+get_activities = function (city, state, start_date, end_date, callback) {
     var expedia_url = 'https://www.expedia.com/lx/api/search';
 
     var expedia_params = {
@@ -41,7 +41,3 @@ exports.get_activities = function get_activities(city, state, start_date, end_da
 	callback(JSON.parse(body));
     });
 }
-
-get_activities('Austin', 'Texas', '2017-07-21', '2017-07-23', function (act) {
-    console.log(act);
-});

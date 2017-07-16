@@ -21,8 +21,8 @@ function next_page(next, heads, list, done) {
     }
 }
 
-function get_homes(city, state, start_date, end_date,
-		   lat, lon, dist, callback) {
+get_homes = function (city, state, start_date, end_date,
+		      lat, lon, dist, callback) {
     var homeaway_auth_url = 'https://ws.homeaway.com/oauth/token';
     var properties = [];
 
@@ -75,15 +75,3 @@ function get_homes(city, state, start_date, end_date,
     }).auth('55c23d2c-05a0-4c05-af67-7953d2aa1de0',
 	    '99e2747e-556c-4730-b033-cda6acb70a7e');
 }
-
-get_homes('Austin', 'Texas', '2017-07-21', '2017-07-23',
-	  null, null, null, function (props) {
-	      console.log(props);
-	      console.log(props.length);
-	  });
-
-get_homes('Austin', 'Texas', '2017-07-21', '2017-07-23',
-	  30.286519, -97.745220, 1, function (props) {
-	      console.log(props);
-	      console.log(props.length);
-	  });

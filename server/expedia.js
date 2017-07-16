@@ -1,7 +1,7 @@
 var request = require('request');
 
 exports.get_activities = function get_activities(city, state, start_date, end_date, callback) {
-    var expedia_url = "https://www.expedia.com/lx/api/search";
+    var expedia_url = 'https://www.expedia.com/lx/api/search';
 
     var expedia_params = {
 	publishUIS: true,
@@ -29,7 +29,7 @@ exports.get_activities = function get_activities(city, state, start_date, end_da
 	countryCode: 'US'
     };
 
-    expedia_params.location = city + ", " + state;
+    expedia_params.location = city + ', ' + state;
     expedia_params.startDate = start_date;
     expedia_params.endDate = end_date;
 
@@ -38,6 +38,10 @@ exports.get_activities = function get_activities(city, state, start_date, end_da
 	    console.log(err);
 	    return;
 	}
-	callback(JSON.parse(body))
+	callback(JSON.parse(body));
     });
 }
+
+get_activities('Austin', 'Texas', '2017-07-21', '2017-07-23', function (act) {
+    console.log(act);
+});

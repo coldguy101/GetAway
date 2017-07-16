@@ -18275,7 +18275,21 @@ app.controller('mainController', function ($scope) {
                 listingUrl: 'https://www.homeaway.com/vacation-rental/p4498141' } ]
     508
     ;
+
+    $scope.things = [
+        "cat",
+        "dog",
+        "biking",
+        "walking",
+        "kayaking",
+        "domain"
+    ];
+
+    $scope.showOrNot = function (string) {
+
+    }
 });
+
 
 
 console.log(todosList)

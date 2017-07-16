@@ -1,56 +1,121 @@
 <head>
-  <title>GetAway</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js">
+    <title>GetAway</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js">
 </head>
 
 <body>
 <div ng-app="getaway" ng-controller="mainController">
+<h1> <strong> GetAway </strong> </h1>
     <div class="container">
-        <div class="col-md-8 col-md-offset-3">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" id="form41" class="form-control"
+                    placeholder="City">
+                </div>
+            </div>
+
+            <!--Second column-->
+            <div class="col-md-3">
+            <div class="input-group">
+                <input type="text" id="form51" class="form-control"
+                       placeholder="State">
+            </div>
+        </div>
+
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" id="form51" class="form-control"
+                           placeholder="Start Date">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" id="form51" class="form-control"
+                           placeholder="End Date">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-3"> </div>
+        <div class="col-md-6 col-md-offset-3">
             <br>
             <br>
             <div class="input-group">
                 <input type="text" class="form-control"
-                       placeholder="What do you want to do"
+                       placeholder="What do you want to do?"
                        ng-model="query"/>
                 <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit"> Search</button>
                     </span>
             </div>
             <br>
             <br>
-        <div class="card" ng-repeat="property in properties | filter:
-              query ">
-            <a href={{property.listingUrl}}>
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-                <img src={{property.thumbnail.uri}} class="img-fluid" alt="">
-                    <div class="mask waves-effect waves-light"></div>
-            </div>
-            <!--/.Card image-->
-
-            <!--Card content-->
-            <div class="card-block">
-                <!--Title-->
-                <h4 class="card-title">{{property.headline}}</h4>
-                <!--Text-->
-                <p class="card-text">{{property.description}}</p>
-            </div>
-            <!--/.Card content-->
-            </a>
-
+        </div>
+            <div class="col-md-3"> </div>
+        </div>
         </div>
     </div>
-    </div>
+    <span class="rowContainer" ng-repeat="property in properties |
+    filter:query">
+        <div class="container">
+                <div class="row">
+                    <div class="colr-md-1"> </div>
+                                        <div class="col-md-6">
+                <div class="card card-primary text-center z-depth-2">
+                    <div class="card-block">
+                        <ul>
+                            <li ng-repeat="thing in things">
+                                {{thing}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                <div class="card">
+                    <a href={{property.listingUrl}}>
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src={{property.thumbnail.uri}} class="img-fluid"
+                                 alt="">
+                            <div class="mask waves-effect waves-light"></div>
+                        </div>
+                        <!--/.Card image-->
 
-
-
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title"> {{property.headline}} </h4>
+                            <!--Text-->
+                            <p class="card-text">{{property.description}}</p>
+                        </div>
+                        <!--/.Card content-->
+                    </a>
+                </div>
+                    </div>
+                    <div class="col-md-1"> </div>
+                    </div>
+                <br>
+                <br>
+            </div>
+            </span>
 
 </div>
-
-
+</div>
 
 
 </body>

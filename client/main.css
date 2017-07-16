@@ -6,10 +6,15 @@ div.card a {
     color:black;
 }
 
-card {
-    float: left;
+ul {
+    color: white;
 }
 
-card-primary {
-    float: left;
+
+view img {
+   width: 100%;
+}
+
+card {
+    width: 100%;
 }

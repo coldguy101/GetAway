@@ -18277,17 +18277,14 @@ app.controller('mainController', function ($scope) {
     ;
 
     $scope.things = [
-        "cat",
-        "dog",
+        "paddleboarding",
+        "sailing",
         "biking",
         "walking",
         "kayaking",
         "domain"
     ];
 
-    $scope.showOrNot = function (string) {
-
-    }
 });
 
 

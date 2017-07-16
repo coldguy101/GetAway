@@ -18,3 +18,7 @@ view img {
 card {
     width: 100%;
 }
+
+h1 {
+    padding: 50px;
+}
